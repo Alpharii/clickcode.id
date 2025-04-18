@@ -5,7 +5,7 @@ import { Code, ArrowRight, Sparkles } from "lucide-react";
 const HeroSection = () => {
   return (
     <section
-    className="relative min-h-[calc(100vh-80px)] pt-20 flex items-center bg-gradient-to-br from-slate-50 to-white px-4 overflow-hidden"
+    className="relative min-h-[calc(100vh-80px)] pt-24 flex items-center bg-gradient-to-br from-slate-50 to-white px-4 overflow-hidden pb-10"
     >    
     {/* Background Gradient Blur */}
       <div

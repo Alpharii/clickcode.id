@@ -60,7 +60,7 @@ const Navbar = () => {
               <Menu className="h-5 w-5" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="p-6" data-aos="fade-up" data-aos-delay="200">
+          <DialogContent className="p-6">
             <div className="flex flex-col gap-4 mt-8">
               {navItems.map((item, index) => (
                 <NavLink

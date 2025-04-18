@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import type { MetaFunction } from "@remix-run/node";
-import HeroSection from "~/components/HeroSection";
-import Navbar from "~/components/Navbar";
-import { Loader2 } from "lucide-react"; // Spinner dari Lucide React
+import HeroSection from "../components/HeroSection";
+import Navbar from "../components/Navbar";
+import { Loader2 } from "lucide-react";
+import About from "../components/About";
+import ServicesPage from "~/components/Services";
+import PortfolioPage from "~/components/Portfolio";
+import TestimonialPage from "~/components/Testimonial";
+import TechStackPage from "~/components/Techstack";
+import ContactPage from "~/components/Contact";
+import Footer from "~/components/Footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,6 +23,7 @@ const loadAssets = async () => {
   const assets = [
     "/hero.jpg", // Gambar di HeroSection
     "/logo.png", // Logo di Navbar
+    "/team.jpg"
   ];
 
   // Memuat setiap gambar sebagai Promise
@@ -58,6 +66,13 @@ export default function Index() {
         <>
           <Navbar />
           <HeroSection />
+          <About />
+          <ServicesPage />
+          <PortfolioPage />
+          <TestimonialPage />
+          <TechStackPage />
+          <ContactPage />
+          <Footer />
         </>
       )}
     </div>

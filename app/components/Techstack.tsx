@@ -11,30 +11,43 @@ export const meta = () => {
   ];
 };
 
-// Data Tech Stack
+// Data Tech Stack (diperbarui)
 const techStacks = [
-  { id: 1, name: "Laravel", icon: "/icons/laravel.svg" },
-  { id: 2, name: "PHP", icon: "/icons/php.svg" },
-  { id: 3, name: "NestJS", icon: "/icons/nestjs.svg" },
-  { id: 4, name: "ExpressJS", icon: "/icons/expressjs.svg" },
-  { id: 5, name: "StrapiJS", icon: "/icons/strapi.svg" },
-  { id: 6, name: "Golang", icon: "/icons/golang.svg" },
-  { id: 7, name: "Gin", icon: "/icons/gin.svg" },
-  { id: 8, name: "GoFiber", icon: "/icons/gofiber.svg" },
-  { id: 9, name: "NextJS", icon: "/icons/nextjs.svg" },
-  { id: 10, name: "VueJS", icon: "/icons/vuejs.svg" },
-  { id: 11, name: "RemixJS", icon: "/icons/remixjs.svg" },
-  { id: 12, name: "ReactJS", icon: "/icons/reactjs.svg" },
-  { id: 13, name: "Docker", icon: "/icons/docker.svg" },
-  { id: 14, name: "PostgreSQL", icon: "/icons/postgresql.svg" },
-  { id: 15, name: "MongoDB", icon: "/icons/mongodb.svg" },
-  { id: 16, name: "Prisma", icon: "/icons/prisma.svg" },
-  { id: 17, name: "Figma", icon: "/icons/figma.svg" },
+  // Bahasa Pemrograman
+  { id: 1, name: "JavaScript", iconName: "ci-javascript" },
+  { id: 2, name: "TypeScript", iconName: "ci-typescript" },
+  { id: 3, name: "PHP", iconName: "ci-php" },
+  { id: 4, name: "Golang", iconName: "ci-golang" },
+  { id: 5, name: "Solidity", iconName: "ci-solidity" },
+
+  // Framework dan Library
+  { id: 6, name: "Laravel", iconName: "ci-laravel" },
+  { id: 7, name: "Node.js", iconName: "ci-nodejs" },
+  { id: 8, name: "BunJs", iconName: "ci-bun" },
+  { id: 9, name: "AntDesign", iconName: "ci-antdesign" },
+  { id: 10, name: "Etherium", iconName: "ci-eth" },
+  { id: 11, name: "NextJS", iconName: "ci-nextjs" },
+  { id: 12, name: "VueJS", iconName: "ci-vuejs" },
+  { id: 13, name: "Tailwind CSS", iconName: "ci-tailwindcss" },
+  { id: 14, name: "ReactJS", iconName: "ci-reactjs" },
+  { id: 15, name: "React Router", iconName: "ci-reactrouter" },
+  { id: 16, name: "ViteJS", iconName: "ci-vitejs" },
+  { id: 17, name: "Pinia", iconName: "ci-pinia" },
+  { id: 18, name: "NestJS", iconName: "ci-nestjs" },
+  { id: 19, name: "Hardhat", iconName: "ci-hardhat" },
+  { id: 20, name: "Prisma", iconName: "ci-prisma" },
+
+  // Tools
+  { id: 21, name: "Docker", iconName: "ci-docker" },
+  { id: 22, name: "MySql", iconName: "ci-mysql" },
+  { id: 23, name: "PostgreSQL", iconName: "ci-postgresql" },
+  { id: 24, name: "MongoDB", iconName: "ci-mongodb" },
+  { id: 25, name: "Figma", iconName: "ci-figma" },
 ];
 
 const TechStackPage = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-teal-50 to-white py-16 relative overflow-hidden">
+    <section className="min-h-screen bg-gradient-to-br from-teal-50 to-white flex flex-col justify-center items-center relative overflow-hidden">
       {/* Background Gradient Blur */}
       <div
         data-aos="fade"
@@ -48,7 +61,7 @@ const TechStackPage = () => {
       />
 
       {/* Hero Section */}
-      <div className="container mx-auto px-4 text-center space-y-8 relative z-10" data-aos="fade-up" data-aos-delay="100">
+      <div className="container mx-auto px-4 text-center space-y-8 relative z-10 -mt-32" data-aos="fade-up" data-aos-delay="100">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
           Teknologi Kami
         </h1>
@@ -72,7 +85,7 @@ const TechStackPage = () => {
             },
           }}
           autoplay={{
-            delay: 1000, // Delay antar slide (0.5 detik)
+            delay: 1000, // Delay antar slide (1 detik)
             disableOnInteraction: false, // Tetap autoplay setelah interaksi pengguna
           }}
           loop={true} // Aktifkan loop agar slider berputar terus
@@ -81,7 +94,8 @@ const TechStackPage = () => {
           {techStacks.map((tech) => (
             <SwiperSlide key={tech.id}>
               <Card className="overflow-hidden shadow-md hover:shadow-lg transition flex flex-col items-center justify-center p-6" data-aos="fade-up" data-aos-delay="200">
-                <img src={tech.icon} alt={`${tech.name} logo`} className="w-12 h-12 mb-4" />
+                {/* Render ikon menggunakan <i> tag */}
+                <i className={`${tech.iconName} ci-2x mb-4`} />
                 <h3 className="text-lg font-bold text-gray-900">{tech.name}</h3>
               </Card>
             </SwiperSlide>

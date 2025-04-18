@@ -110,23 +110,31 @@ const ServicesPage = () => {
       </div>
 
       {/* Highlight Fitur Unggulan */}
-      <div className="container mx-auto px-4 mt-16 text-center space-y-8 relative z-10">
-        <h2 className="text-3xl font-bold text-gray-900" data-aos="fade-up" data-aos-delay="100">
+      <div className="container mx-auto px-4 mt-20 mb-20 text-center space-y-12 relative z-10">
+        {/* Judul */}
+        <h2
+          className="text-3xl font-bold text-gray-900"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Fitur Unggulan Kami
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {/* Grid Features */}
+        <div className="pt-10 grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Feature 1 */}
-          <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">
-            <Code className="h-12 w-12 text-primary mx-auto" />
+          <div className="space-y-6" data-aos="fade-up" data-aos-delay="200">
+            <Code className="h-16 w-16 text-primary mx-auto" />
             <h3 className="text-xl font-bold text-gray-900">Desain Responsif</h3>
             <p className="text-gray-700">
-              Website kami bekerja dengan sempurna di semua perangkat, baik desktop maupun mobile.
+              Website kami bekerja dengan sempurna di semua perangkat, baik desktop
+              maupun mobile.
             </p>
           </div>
 
           {/* Feature 2 */}
-          <div className="space-y-4" data-aos="fade-up" data-aos-delay="300">
-            <ShieldCheck className="h-12 w-12 text-primary mx-auto" />
+          <div className="space-y-6" data-aos="fade-up" data-aos-delay="300">
+            <ShieldCheck className="h-16 w-16 text-primary mx-auto" />
             <h3 className="text-xl font-bold text-gray-900">Waktu Pengerjaan Cepat</h3>
             <p className="text-gray-700">
               Kami memastikan proyek selesai tepat waktu tanpa mengorbankan kualitas.
@@ -134,11 +142,12 @@ const ServicesPage = () => {
           </div>
 
           {/* Feature 3 */}
-          <div className="space-y-4" data-aos="fade-up" data-aos-delay="400">
-            <ShoppingCart className="h-12 w-12 text-primary mx-auto" />
+          <div className="space-y-6" data-aos="fade-up" data-aos-delay="400">
+            <ShoppingCart className="h-16 w-16 text-primary mx-auto" />
             <h3 className="text-xl font-bold text-gray-900">Harga Terjangkau</h3>
             <p className="text-gray-700">
-              Layanan berkualitas tinggi dengan harga yang kompetitif untuk semua kebutuhan Anda.
+              Layanan berkualitas tinggi dengan harga yang kompetitif untuk semua
+              kebutuhan Anda.
             </p>
           </div>
         </div>

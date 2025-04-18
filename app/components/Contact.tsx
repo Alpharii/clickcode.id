@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Card } from "~/components/ui/card";
 import { Button } from "~/components/ui/button";
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 export const meta = () => {
   return [
@@ -28,9 +30,49 @@ const ContactPage = () => {
   // Handler untuk submit formulir
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Pesan Anda telah terkirim!");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+  
+    // Kirim email menggunakan EmailJS
+    emailjs
+      .send(
+        "service_26i24bl", // Service ID
+        "template_2e87t4x", // Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          title: formData.phone,
+          message: formData.message,
+        },
+        {
+          publicKey: "1gKEZypk1KkApjgi6", // Public Key harus dikirim sebagai object
+        }
+      )
+      .then(
+        (result) => {
+          // Notifikasi sukses dengan SweetAlert2
+          Swal.fire({
+            icon: "success",
+            title: "Pesan Terkirim!",
+            text: "Pesan Anda telah berhasil dikirim.",
+            confirmButtonColor: "#3b82f6", // Warna tombol sesuai tema
+          });
+  
+          // Reset formulir
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (error) => {
+          console.error(error);
+  
+          // Notifikasi error dengan SweetAlert2
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.",
+            confirmButtonColor: "#ef4444", // Warna tombol merah untuk error
+          });
+        }
+      );
   };
+
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-blue-50 to-white py-16 relative overflow-hidden">
@@ -61,66 +103,66 @@ const ContactPage = () => {
         {/* Formulir Kontak */}
         <Card className="overflow-hidden shadow-md p-6 space-y-6" data-aos="fade-right" data-aos-delay="200">
           <h2 className="text-2xl font-bold text-gray-900">Kirim Pesan</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Nama
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                Nomor Telepon
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Pesan
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              Kirim Pesan
-            </Button>
-          </form>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              Nama
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white text-gray-900"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white text-gray-900"
+            />
+          </div>
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              Nomor Telepon
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white text-gray-900"
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              Pesan
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white text-gray-900"
+            />
+          </div>
+          <Button type="submit" className="w-full">
+            Kirim Pesan
+          </Button>
+        </form>
         </Card>
 
         {/* Informasi Kontak */}

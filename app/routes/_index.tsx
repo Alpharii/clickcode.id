@@ -13,8 +13,8 @@ import Footer from "~/components/Footer";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "ClickCode.id" },
+    { name: "ClickCode.id", content: "Jasa Pembuatan Website Modern Dengan Harga Terjangkau" },
   ];
 };
 

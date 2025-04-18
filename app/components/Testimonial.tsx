@@ -11,8 +11,8 @@ export const meta = () => {
 const testimonials = [
   {
     id: 1,
-    name: "Andi Prasetyo",
-    role: "CEO Startup Teknologi",
+    name: "Akbar Prayuda",
+    role: "Fullstack Web Developer",
     image: "/customer1.jpg",
     quote:
       "Clickcode membantu kami membangun website yang sangat profesional dan responsif. Prosesnya cepat, hasilnya luar biasa!",
@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Maria Dewi",
+    name: "Farras Abdurazaq",
     role: "Pemilik Toko Online",
     image: "/customer2.jpg",
     quote:
@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Budi Santoso",
+    name: "Septiawan Bhilmar",
     role: "Manajer Pemasaran",
     image: "/customer3.jpg",
     quote:

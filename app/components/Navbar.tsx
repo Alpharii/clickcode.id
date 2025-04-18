@@ -3,7 +3,6 @@ import { NavLink } from '@remix-run/react';
 import { Button } from '../components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '../components/ui/dialog';
 import { Menu } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -18,29 +17,20 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 z-50">
+    <nav className="w-full bg-white shadow-sm fixed top-0 z-50" data-aos="fade-down" data-aos-delay="100">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        >
-        <NavLink to="/" className="flex items-center gap-2 text-xl font-bold text-primary">
+        <div data-aos="fade-right" data-aos-delay="200">
+          <NavLink to="/" className="flex items-center gap-2 text-xl font-bold text-primary">
             {/* Logo */}
             <img src="/logo.png" alt="Clickcode Logo" className="h-8 w-8" />
-            {/* Teks */}  
+            {/* Teks */}
             Clickcode
-        </NavLink>
-        </motion.div>
-        
+          </NavLink>
+        </div>
+
         {/* Nav Items for Desktop */}
-        <motion.div
-          className="hidden md:flex gap-6 items-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        <div className="hidden md:flex gap-6 items-center" data-aos="fade-left" data-aos-delay="300">
           {navItems.map((item, index) => (
             <NavLink
               key={index}
@@ -54,19 +44,14 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Button for Desktop */}
-        <motion.div
-          className="hidden md:block"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
+        <div className="hidden md:block" data-aos="fade-left" data-aos-delay="400">
           <Button asChild>
             <NavLink to="/contact">Hubungi Kami</NavLink>
           </Button>
-        </motion.div>
+        </div>
 
         {/* Mobile Menu */}
         <Dialog open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -75,7 +60,7 @@ const Navbar = () => {
               <Menu className="h-5 w-5" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="p-6">
+          <DialogContent className="p-6" data-aos="fade-up" data-aos-delay="200">
             <div className="flex flex-col gap-4 mt-8">
               {navItems.map((item, index) => (
                 <NavLink

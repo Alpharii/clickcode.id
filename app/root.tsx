@@ -8,6 +8,9 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -23,6 +26,16 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    // Pastikan AOS hanya diinisialisasi di browser
+    if (typeof window !== "undefined") {
+      AOS.init({
+        duration: 800, // Durasi animasi default
+        delay: 50,     // Delay sebelum animasi dimulai
+        once: true,    // Animasi hanya diputar sekali
+      });
+    }
+  }, []);
   return (
     <html lang="en">
       <head>

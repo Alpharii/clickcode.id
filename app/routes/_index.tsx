@@ -13,8 +13,15 @@ import Footer from "~/components/Footer";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "ClickCode.id" },
-    { name: "ClickCode.id", content: "Jasa Pembuatan Website Modern Dengan Harga Terjangkau" },
+    { title: "ClickCode.id - Jasa Pembuatan Website Modern | Harga Terjangkau" },
+    { name: "description", content: "Kami menyediakan jasa pembuatan website modern dengan harga terjangkau. Dapatkan desain profesional, responsif, dan SEO-friendly di ClickCode.id." },
+    { name: "keywords", content: "clickcode, jasa pembuatan website, website cms murah, clickcode id, pembuatan website profesional, website murah" },
+    { property: "og:title", content: "ClickCode.id - Jasa Pembuatan Website Modern" },
+    { property: "og:description", content: "Kami menyediakan jasa pembuatan website modern dengan harga terjangkau. Dapatkan desain profesional, responsif, dan SEO-friendly di ClickCode.id." },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://clickcode.id" },
+    { name: "twitter:title", content: "ClickCode.id - Jasa Pembuatan Website Modern" },
+    { name: "twitter:description", content: "Kami menyediakan jasa pembuatan website modern dengan harga terjangkau. Dapatkan desain profesional, responsif, dan SEO-friendly di ClickCode.id." },
   ];
 };
 
@@ -61,6 +68,9 @@ export default function Index() {
         <div className="min-h-screen flex flex-col justify-center items-center bg-white">
           <Loader2 className="animate-spin h-12 w-12 text-primary mb-4" />
           <p className="text-gray-600 text-lg">Memuat halaman...</p>
+          <p className="text-gray-500 text-sm mt-2">
+            Jasa pembuatan website modern dengan harga terjangkau.
+          </p>
         </div>
       ) : (
         <>

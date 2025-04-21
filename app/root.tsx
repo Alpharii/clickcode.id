@@ -27,12 +27,11 @@ export const links: LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Pastikan AOS hanya diinisialisasi di browser
     if (typeof window !== "undefined") {
       AOS.init({
-        duration: 800, // Durasi animasi default
-        delay: 50,     // Delay sebelum animasi dimulai
-        once: true,    // Animasi hanya diputar sekali
+        duration: 800,
+        delay: 50,
+        once: true,
       });
     }
   }, []);
@@ -42,6 +41,39 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="FbMzG92KKmM4YxIzaDDqY88ldtV_mmIEsVIoisQLxIc" />
+
+        {/* SEO Meta Tags */}
+        <title>ClickCode - Jasa Pembuatan Website CMS Murah | clickcode.id</title>
+        <meta
+          name="description"
+          content="ClickCode menyediakan jasa pembuatan website CMS murah dengan desain profesional dan responsif. Hubungi kami sekarang untuk solusi website terbaik!"
+        />
+        <meta
+          name="keywords"
+          content="clickcode, jasa pembuatan website, website cms murah, clickcode id, pembuatan website profesional, website murah"
+        />
+        <meta name="author" content="ClickCode" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Tags untuk Media Sosial */}
+        <meta property="og:title" content="ClickCode - Jasa Pembuatan Website CMS Murah" />
+        <meta
+          property="og:description"
+          content="ClickCode menyediakan jasa pembuatan website CMS murah dengan desain profesional dan responsif."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://clickcode.id" />
+        <meta property="og:image" content="https://clickcode.id/images/seo-image.jpg" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ClickCode - Jasa Pembuatan Website CMS Murah" />
+        <meta
+          name="twitter:description"
+          content="ClickCode menyediakan jasa pembuatan website CMS murah dengan desain profesional dan responsif."
+        />
+        <meta name="twitter:image" content="https://clickcode.id/images/seo-image.jpg" />
+
         <Meta />
         <Links />
         <link

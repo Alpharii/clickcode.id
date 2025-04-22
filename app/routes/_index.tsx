@@ -65,13 +65,15 @@ export default function Index() {
     <div>
       {/* Loading Screen */}
       {loading ? (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-white">
-          <Loader2 className="animate-spin h-12 w-12 text-primary mb-4" />
-          <p className="text-gray-600 text-lg">Memuat halaman...</p>
-          <p className="text-gray-500 text-sm mt-2">
-            Jasa pembuatan website modern dengan harga terjangkau.
-          </p>
-        </div>
+        <div className="min-h-screen flex flex-col justify-center items-center bg-white max-w-screen">
+        <Loader2 className="animate-spin h-12 w-12 text-primary sm:h-10 sm:w-10 mb-4" />
+        <p className="text-gray-600 text-lg sm:text-base text-center">
+          Memuat halaman...
+        </p>
+        <p className="text-gray-500 text-sm sm:text-xs mt-2 text-center">
+          Jasa pembuatan website modern dengan harga terjangkau.
+        </p>
+      </div>
       ) : (
         <>
           <Navbar />

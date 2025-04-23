@@ -50,7 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
         <meta
           name="keywords"
-          content="clickcode, click code, jasa pembuatan website, website cms murah, clickcode id, pembuatan website profesional, website murah, click code cms murah, jasa web design, solusi website murah, layanan pembuatan website"
+          content="clickcode, click code, click code id, jasa pembuatan website, website cms murah, clickcode id, pembuatan website profesional, website murah, click code cms murah, jasa web design, solusi website murah, layanan pembuatan website"
         />
         <meta name="author" content="ClickCode" />
         <meta name="robots" content="index, follow" />
